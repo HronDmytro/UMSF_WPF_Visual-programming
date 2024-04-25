@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projects\\lab_1\\Exercise\\Exercise.csproj",
+      "projectUniqueName": "D:\\github_repositories\\UMSF_WPF_Visual-programming\\lab_1\\Exercise\\Exercise.csproj",
       "projectName": "Exercise",
-      "projectPath": "D:\\projects\\lab_1\\Exercise\\Exercise.csproj",
+      "projectPath": "D:\\github_repositories\\UMSF_WPF_Visual-programming\\lab_1\\Exercise\\Exercise.csproj",
       "packagesPath": "C:\\Users\\unvmj\\.nuget\\packages\\",
-      "outputPath": "D:\\projects\\lab_1\\Exercise\\obj\\",
+      "outputPath": "D:\\github_repositories\\UMSF_WPF_Visual-programming\\lab_1\\Exercise\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Programs\\Visual Studio\\Shared\\NuGetPackages"

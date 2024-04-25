@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\projects\\lab_1\\lab_1\\Example_1.csproj": {}
+    "D:\\github_repositories\\UMSF_WPF_Visual-programming\\lab_1\\lab_1\\Example_1.csproj": {}
   },
   "projects": {
-    "D:\\projects\\lab_1\\lab_1\\Example_1.csproj": {
+    "D:\\github_repositories\\UMSF_WPF_Visual-programming\\lab_1\\lab_1\\Example_1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects\\lab_1\\lab_1\\Example_1.csproj",
+        "projectUniqueName": "D:\\github_repositories\\UMSF_WPF_Visual-programming\\lab_1\\lab_1\\Example_1.csproj",
         "projectName": "Example_1",
-        "projectPath": "D:\\projects\\lab_1\\lab_1\\Example_1.csproj",
+        "projectPath": "D:\\github_repositories\\UMSF_WPF_Visual-programming\\lab_1\\lab_1\\Example_1.csproj",
         "packagesPath": "C:\\Users\\unvmj\\.nuget\\packages\\",
-        "outputPath": "D:\\projects\\lab_1\\lab_1\\obj\\",
+        "outputPath": "D:\\github_repositories\\UMSF_WPF_Visual-programming\\lab_1\\lab_1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Programs\\Visual Studio\\Shared\\NuGetPackages"
