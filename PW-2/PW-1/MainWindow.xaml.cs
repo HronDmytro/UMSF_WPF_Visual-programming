@@ -8,6 +8,8 @@ namespace PW_1
 {
     public partial class MainWindow : Window
     {
+        private Random random = new Random();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -16,34 +18,51 @@ namespace PW_1
 
         private void AnimateShapes()
         {
-            AnimateShape(triangle, 0, 200, TimeSpan.FromSeconds(5), 0, 0);
-            AnimateShape(rectangle, 200, 0, TimeSpan.FromSeconds(5), 0, 200);
-            AnimateShape(circle, 0, 200, TimeSpan.FromSeconds(5), 200, 200);
-            AnimateShape(pyramid, 200, 0, TimeSpan.FromSeconds(5), 200, 0);
+            AnimateShapeWithRandomPath(triangle, TimeSpan.FromSeconds(5));
+            AnimateShapeWithRandomPath(rectangle, TimeSpan.FromSeconds(5));
+            AnimateShapeWithRandomPath(circle, TimeSpan.FromSeconds(5));
+            AnimateShapeWithRandomPath(pyramid, TimeSpan.FromSeconds(5));
         }
 
-        private void AnimateShape(UIElement shape, double from, double to, TimeSpan duration, double x, double y)
+        private void AnimateShapeWithRandomPath(UIElement shape, TimeSpan duration)
         {
             shape.Visibility = Visibility.Visible;
-            DoubleAnimation animation = new DoubleAnimation();
-            animation.From = from;
-            animation.To = to;
-            animation.Duration = duration;
+
+            double startX = random.NextDouble() * (canvas.ActualWidth - 40);
+            double startY = random.NextDouble() * (canvas.ActualHeight - 40);
+            double endX = random.NextDouble() * (canvas.ActualWidth - 40);
+            double endY = random.NextDouble() * (canvas.ActualHeight - 40);
+
+            AnimateShape(shape, startX, startY, endX, endY, duration);
+        }
+
+        private void AnimateShape(UIElement shape, double startX, double startY, double endX, double endY, TimeSpan duration)
+        {
+            DoubleAnimation animationX = new DoubleAnimation();
+            animationX.From = startX;
+            animationX.To = endX;
+            animationX.Duration = duration;
+
+            DoubleAnimation animationY = new DoubleAnimation();
+            animationY.From = startY;
+            animationY.To = endY;
+            animationY.Duration = duration;
 
             TranslateTransform transform = new TranslateTransform();
             shape.RenderTransform = transform;
 
-            animation.Completed += (sender, e) =>
+            animationX.Completed += (sender, e) =>
             {
                 transform.BeginAnimation(TranslateTransform.XProperty, null);
                 transform.BeginAnimation(TranslateTransform.YProperty, null);
-                transform.X = x;
-                transform.Y = y;
-                AnimateShape(shape, from, to, duration, x, y);
+                transform.X = endX;
+                transform.Y = endY;
+                AnimateShape(shape, endX, endY, random.NextDouble() * (canvas.ActualWidth - 40), random.NextDouble() * (canvas.ActualHeight - 40), duration);
             };
 
-            transform.BeginAnimation(TranslateTransform.XProperty, animation);
-            transform.BeginAnimation(TranslateTransform.YProperty, animation);
+            transform.BeginAnimation(TranslateTransform.XProperty, animationX);
+            transform.BeginAnimation(TranslateTransform.YProperty, animationY);
         }
+
     }
 }
